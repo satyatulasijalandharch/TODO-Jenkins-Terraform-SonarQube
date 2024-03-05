@@ -28,7 +28,7 @@ resource "aws_iam_instance_profile" "todo_profile" {
 
 resource "aws_instance" "web" {
   ami                    = "ami-03f4878755434977f" #change ami id for different region
-  instance_type          = "t2.medium"
+  instance_type          = "t2.large"
   key_name               = "jenkins" #change key name as per your setup
   vpc_security_group_ids = [aws_security_group.Jenkins-Terraform-SonarQube.id]
   user_data              = templatefile("./install.sh", {})
